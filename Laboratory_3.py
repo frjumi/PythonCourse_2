@@ -2,8 +2,8 @@ class Book:
     """ Базовый класс книги. """
 
     def __init__(self, name: str, author: str):
-        self._name = name
-        self._author = author
+        self.__name = name
+        self.__author = author
 
     def __str__(self):
         return f"Книга {self.name}. Автор {self.author}."
@@ -13,23 +13,11 @@ class Book:
 
     @property
     def name(self) -> str:
-        return self._name
-
-    @name.setter
-    def name(self, name: str) -> None:
-        if not isinstance(name, str):
-            raise TypeError
-        self._name = name
+        return self.__name
 
     @property
     def author(self) -> str:
-        return self._author
-
-    @author.setter
-    def author(self, author: str) -> None:
-        if not isinstance(author, str):
-            raise TypeError
-        self._author = author
+        return self.__author
 
 
 class PaperBook(Book):
